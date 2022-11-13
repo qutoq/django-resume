@@ -1,0 +1,38 @@
+{% extends 'firstapp/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class = 'container bg-white' >
+
+  <h1>Полный список проектов</h1>
+  <p></p>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+<div class="row" data-masonry='{"percentPosition": true}'>
+  {% for project in projects %}
+  <div class="col-sm-6 col-lg-4 mb-4">
+    <div class="card min-vw-540" >
+      <div class="row g-0">
+        <div class="col-4">
+          {% if project.image %}
+            <img src="{{project.image.url}}"  alt="img" class="img-fluid">
+          {% endif %}
+        </div>
+        <div class="col-8">
+          <h5 class="card-title"><a href="{{ project.link }}" target="_blank" class="btn btn-primary w-100">{{ project.title }}</a></h5>
+          <div class="card-body">
+            <p class="card-text">{{ project.text|linebreaksbr }}</p>
+            <p class="card-text">
+              {% for tag in project.tags.all %}
+                <span class="badge rounded-pill bg-success">{{tag}}</span>
+              {% endfor %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+{% endblock %}

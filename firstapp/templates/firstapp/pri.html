@@ -1,0 +1,166 @@
+{% extends 'firstapp/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class = 'container bg-white' >
+<div class="row g-0">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10 border">
+        <div class="row g-0 py-1">
+            <div class="col-lg-3 container-1" >
+                <div class="container">
+                    <div class="container-1 py-3 text-center bg-gradient" >
+                        <div class="row g-0">
+                            <div class="col-3"></div>
+                            <div class="col-6">
+                                <img src="{% static 'img/photo/ya^2.jpg' %}" class="center rounded-pill w-100" alt="...">
+                            </div>
+                            <div class="col-3"></div>
+                        </div>
+                        <p></p>
+                        <h2 class="text-center">Денис Лошкарёв</h2>
+                    </div>
+                    <hr>
+                    <div class="vl"><h4 class="px-2">КОНТАКТЫ</h4></div>
+                    <hr>
+                    <div class="px-4">
+                        <p class="card-text"><i class="bi bi-telephone"></i> +7-960-374-1086</p>
+                        <p class="card-text"><i class="bi bi-envelope"></i> Den-73-73@yandex.ru</p>
+                        <p class="card-text"><i class="bi bi-telegram"></i> @AffirmativeActor</p>
+                        <a href="{% url 'contact' %}" class="btn bg-success text-white" style="background-color: 	#2eb8b8   " >Связаться со мной</a>
+                    </div>
+                    <hr>
+                    <div class="vl"><h4 class="px-2">ЯЗЫКИ</h4></div>
+                    <hr>
+                    <div class="px-4">
+                        <h5>Английский <span class="badge rounded-pill " style="background-color: 	#b30077   ">B1+</span></h5>
+                        <h5>Русский <span class="badge rounded-pill" style="background-color:    #b30077   ">С2</span></h5>
+                    </div>
+                    <p></p>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-success"><a class="text-dark" href="{%static 'files/resume.pdf' %}" target="_blank">Резюме в pdf</a></button>
+                        <button type="button" class="btn btn-outline-success"><a class="text-dark" href="{%static 'files/resume.pdf' %}" download>Скачать резюме</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 py-3 border shadow">
+                <div class="container gx-5 w-100">
+                    <h3>ОБРАЗОВАНИЕ</h3>
+                    <div class="container px-4">
+                        <h4>Яндекс лицей, г. Ульяновск</h4>
+                        <p>2 года, 9-10 класс</p>
+                    </div>
+                    <div class="container px-4">
+                        <h4>Университет ИТМО, г. Санкт-Петербург</h4>
+                        <p>бакалавриат 2 курс ФИТиП, КТ     ---    в академическом отпуске</p>
+                    </div>
+
+                    <h3>ПРОЕКТЫ</h3>
+                    <div class="container px-4">
+                        <a href="https://github.com/pshepshe/tg_schedule_bot" target="_blank"><h4 class="text-dark">Tg bot</h4></a>
+                        <p>Полусеместровый проект в университете на 3 человека.
+                            Телеграмм бот, который отображает расписание для выбранной тобой группы из гугл таблицы.
+                            Позже были добавлены различный фишки для бота, такие как заметки, будильник и т.д.
+                            Я отвечал за проектирование проекта и написание бота и связью его с другими частями кода.
+                            Для БД была выбрана SQLite.</p>
+                    </div>
+                    <div class="container px-4">
+                        <a href="https://github.com/qutoq/django-resume" target="_blank"><h4 class="text-dark">Django резюме</h4></a>
+                        <p>www.xxx.com Мой сайт-резюме написанный на django с использованием bootstrap.</p>
+                    </div>
+                    <div class="container px-4">
+                        <a href="https://github.com/qutoq/kaggle_nyc_airbnb" target="_blank"><h4 class="text-dark">Nyc airbnb</h4></a>
+                        <p>Визуализация датасета с kaggle.com</p>
+                    </div>
+                    <p align="right"><a href="{% url 'projects' %}">полный список проектов...</a></p>
+                    <p></p>
+                    <h3>НАВЫКИ</h3>
+                    <p></p>
+                    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+                    <div class="row" data-masonry='{"percentPosition": true}'>
+                        <div class="col-sm-6 col-lg-6 mb-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Языки программирования</h5>
+                                    <h5 class="card-text">
+                                        <span class="badge rounded-pill bg-success">Python</span>
+                                        <span class="badge rounded-pill bg-success">Java</span>
+                                        <span class="badge rounded-pill bg-success">C++</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6 mb-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Python библиотеки</h5>
+                                    <h5 class="card-text">
+                                        <span class="badge badge-lg rounded-pill bg-success">Telebot</span>
+                                        <span class="badge rounded-pill bg-success">PyQt</span>
+                                        <span class="badge rounded-pill bg-success">PyTest</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6 mb-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Аналитика</h5>
+                                    <h5 class="card-text">
+                                        <span class="badge rounded-pill bg-success">Pandas</span>
+                                        <span class="badge rounded-pill bg-success">Numpy</span>
+                                        <span class="badge rounded-pill bg-success">Matplotlib</span>
+                                        <span class="badge rounded-pill bg-success">Seaborn</span>
+                                        <span class="badge rounded-pill bg-success">Jupyter notebook</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6 mb-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">WEB</h5>
+                                    <h5 class="card-text">
+                                        <span class="badge rounded-pill bg-success">Django</span>
+                                        <span class="badge rounded-pill bg-success">HTML</span>
+                                        <span class="badge rounded-pill bg-success">CSS</span>
+                                        <span class="badge rounded-pill bg-success">Bootstrap</span>
+                                        <span class="badge rounded-pill bg-success">REST API</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6 mb-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">БД</h5>
+                                    <h5 class="card-text">
+                                        <span class="badge rounded-pill bg-success">MySQl</span>
+                                        <span class="badge rounded-pill bg-success">SQlite</span>
+                                        <span class="badge rounded-pill bg-success">MariaDB</span>
+                                        <span class="badge rounded-pill bg-success">Redis</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6 mb-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Полезные штуки</h5>
+                                    <h5 class="card-text">
+                                        <span class="badge rounded-pill bg-success">Git</span>
+                                        <span class="badge rounded-pill bg-success">Linux</span>
+                                        <span class="badge rounded-pill bg-success">Latex</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+</div>
+{% endblock %}
