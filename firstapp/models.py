@@ -30,3 +30,16 @@ class Project(models.Model):
         return self.title
 
 
+class Contact(models.Model):
+    name = models.CharField(max_length=50, default='')
+    email = models.EmailField(max_length=50, default='')
+    company = models.CharField(max_length=50, default='')
+    message = models.TextField(max_length=1000, default='')
+    timeAdd = models.DateTimeField(auto_now_add=False)
+    read = models.BooleanField(default=False)
+
+    def __str__(self):
+        if not self.read:
+            return 'Новое сообщение от: ' + str(self.name)
+        return str(self.name) + ' | ' + str(self.message)
+

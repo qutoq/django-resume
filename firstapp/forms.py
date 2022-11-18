@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post
+from .models import Post, Contact
 
 
 class PostForm(forms.ModelForm):
@@ -8,3 +8,14 @@ class PostForm(forms.ModelForm):
         fields = ('title', 'text',)
 
 
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['name', 'email', 'company', 'message']
+        widgets = {
+            'message': forms.Textarea(
+                attrs={
+                    'placeholder': 'Напишите тут ваше сообщение'
+                }
+            )
+        }
